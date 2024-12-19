@@ -19,6 +19,7 @@ import Footer from "./Footer";
 import arrow from '../images/arrow.png'
 import Heart from '../images/Heart.png'
 import { useNavigate } from "react-router-dom";
+import NavBar from "./NavBar";
 
 
 
@@ -27,7 +28,11 @@ const ViewAccommodation = () => {
   
 
   return (
+    <div>
+      <NavBar />
+    
     <div className="bg-gray-50 text-gray-900">
+      
       <div className="max-w-6xl m-auto px-4 py-8">
         <div className=" flex flex-row  mb-10 justify-between">
           <img src={arrow} alt=""  className="gap-10" onClick={() => navigate("/")}/>
@@ -169,6 +174,7 @@ const ViewAccommodation = () => {
       </div>
       <Find />
       <Footer />
+    </div>
     </div>
   );
 };

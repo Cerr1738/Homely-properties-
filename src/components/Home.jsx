@@ -10,11 +10,14 @@ import FAQ from "./FAQ";
 import CTASection from "./CTASection";
 import Footer from "./Footer";
 import { useNavigate } from "react-router-dom";
+import NavBar from "./NavBar";
 
 const Home = () => {
   const navigate = useNavigate();
   return (
     <div className="font-sans">
+      <NavBar/>
+      
       <section className="bg-[#F4F4F4]">
         <div className="container mx-auto flex flex-col lg:flex-row items-center p-6 lg:p-16">
           <div className="flex-1 text-center lg:text-left">

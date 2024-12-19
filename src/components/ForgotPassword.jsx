@@ -1,12 +1,15 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import arrow from "../images/arrow.png";
+import NavBar from "./NavBar";
 
 const ForgotPassword = () => {
   const navigate = useNavigate();
 
   return (
+    <div><NavBar/>
     <div className="flex items-center justify-center h-auto w-[80%] sm:w-[1060px] bg-[#966453] rounded-[25px] m-auto p-4 mt-[150px] mb-[100px]">
+       
       <div className="w-full sm:w-[360px] p-6 bg-white rounded-[25px] flex flex-col items-center shadow-lg ">
         <img
           src={arrow}
@@ -34,6 +37,7 @@ const ForgotPassword = () => {
           </button>
         </form>
       </div>
+    </div>
     </div>
   );
 };

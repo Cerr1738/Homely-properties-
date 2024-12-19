@@ -4,11 +4,13 @@ import Homely from "./Homely";
 import AppleLogo from "../images/AppleLogo.png";
 import GoogleLogo from "../images/GoogleLogo.png";
 import arrow from "../images/arrow.png";
+import NavBar from "./NavBar";
 
 const UserSignUp = () => {
   const navigate = useNavigate();
 
   return (
+    <div><NavBar/>
     <div className="flex justify-center items-center min-h-screen mt-[60px] ">
       <div className=" max-w-[1060px] w-full h-auto p-6 flex flex-col lg:flex-row gap-8 bg-[#966453] items-center mx-[30px] mb-6 rounded-[40px]">
        
@@ -74,6 +76,7 @@ const UserSignUp = () => {
           </form>
         </div>
       </div>
+    </div>
     </div>
   );
 };

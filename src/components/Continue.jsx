@@ -5,6 +5,7 @@ import arrow from '../images/arrow.png'
 const Continue = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-[#966453] mb-9 px-4 w-[80%] m-auto py-10 rounded-[25px]">
+      
       <div className="w-full max-w-lg p-6 bg-white rounded-[25px] flex flex-col items-center shadow-lg">
     
         <img

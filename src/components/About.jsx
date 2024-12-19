@@ -1,10 +1,12 @@
 import React from "react";
 import Footer from "./Footer";
-
+import NavBar from './NavBar'
 const About = () => {
   return (
     <div>
+      <NavBar />
     <div className=" text-gray-800 min-h-screen py-10 px-6">
+    
       <div className="max-w-5xl mx-auto">
         <h1 className="text-4xl font-bold text-center mb-6">About Homely</h1>
         <p className="text-lg text-center mb-10">

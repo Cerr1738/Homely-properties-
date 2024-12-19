@@ -2,12 +2,16 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../App.css";
 import Homely from "./Homely";
+import NavBar from "./NavBar";
 
 const Login = () => {
   const navigate = useNavigate();
 
   return (
+    <div>
+      <NavBar/>
 <div className="flex justify-center items-center min-h-screen  mt-[60px] ">
+  
 <div className=" max-w-[1060px] w-full h-auto p-6 flex flex-col lg:flex-row gap-8 bg-[#966453] items-center mx-[30px] mb-6 rounded-[40px]">
       
         <div className="flex-1">
@@ -40,6 +44,7 @@ const Login = () => {
           </form>
         </div>
       </div>
+    </div>
     </div>
   );
 };
