@@ -23,7 +23,7 @@ const Header =() => {
           </Link>
           
           <nav className="hidden md:flex items-center gap-6">
-            <Link to= "/dashboard" className="text-sm font-medium">
+            <Link to= "/landlords" className="text-sm font-medium">
               Dashboard
             </Link>
             <Link to="/manage-listing" className="text-sm font-medium">
