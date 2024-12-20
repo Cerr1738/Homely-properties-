@@ -44,7 +44,7 @@ const LandlordSignUp = () => {
       });
 
       localStorage.setItem("token", loginResponse.data.token);
-      navigate("/landlord"); 
+      navigate("/landlords"); 
     } catch (err) {
       setError(err.response?.data?.message || "Registration failed");
     }
