@@ -156,7 +156,7 @@ const Home = () => {
                 <span className="bg-[#FFE9BA] text-black p-3 rounded-full font-bold items-center">
                   Step 1
                 </span>
-                <h3 className="text-3xl font-bold mt-2 md:text-center">
+                <h3 className="text-3xl font-bold mt-2 ">
                   Search for a suitable apartment
                 </h3>
                 <p className="text-gray-600 mt-2 text-2xl">
