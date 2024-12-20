@@ -140,26 +140,26 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="bg-white py-10 ml-6">
+      <section className="bg-white py-10 ml-6 ">
         <div className="container mx-auto p-6">
           <h2 className="text-2xl font-bold text-center mb-8">
             Easy Steps To Secure An Apartment With Homely
           </h2>
-          <div className="flex flex-col gap-12">
-            <div className="flex flex-col lg:flex-row items-center gap-6">
+          <div className="flex flex-col gap-12 m ">
+            <div className="flex flex-col lg:flex-row items-center gap-6 ">
               <img
                 src={youngman}
                 alt="Step 1"
                 className="w-64 h-64 rounded-lg bg-[#93694a]"
               />
-              <div>
-                <span className="bg-[#FFE9BA] text-black p-3 rounded-full font-bold">
+              <div >
+                <span className="bg-[#FFE9BA] text-black p-3 rounded-full font-bold items-center">
                   Step 1
                 </span>
-                <h3 className="text-3xl font-bold mt-2">
+                <h3 className="text-3xl font-bold mt-2 md:text-center">
                   Search for a suitable apartment
                 </h3>
-                <p className="text-gray-600 mt-2 w-[500px]">
+                <p className="text-gray-600 mt-2 text-2xl">
                   Sign up to create your profile and start searching for the
                   perfect apartment. Explore our accommodation listings to find
                   a match that suits your needs.
@@ -180,7 +180,7 @@ const Home = () => {
                 <h3 className="text-3xl font-bold mt-2 w-[450px]">
                   Select a Suitable Apartment of Your Choice
                 </h3>
-                <p className="text-gray-600 mt-2 w-[500px]">
+                <p className="text-gray-600 mt-2 text-2xl">
                   Choose your ideal apartment from our listings, considering
                   factors like location, apartment type, and price range.
                 </p>
@@ -198,7 +198,7 @@ const Home = () => {
                   Step 3
                 </span>
                 <h3 className="text-3xl font-bold mt-2">Contact Agent</h3>
-                <p className="text-gray-600 mt-2 w-[400px]">
+                <p className="text-gray-600 mt-2 text-2xl">
                   Reach out to agents to schedule property viewings and complete
                   your payment process.
                 </p>
