@@ -197,9 +197,9 @@ const Home = () => {
                 <span className="bg-[#FFE9BA] text-black p-3  rounded-full font-bold">
                   Step 3
                 </span>
-                <h3 className="text-3xl font-bold mt-2">Contact Agent</h3>
+                <h3 className="text-3xl font-bold mt-2">Contact landlord</h3>
                 <p className="text-gray-600 mt-2 text-2xl">
-                  Reach out to agents to schedule property viewings and complete
+                  Reach out to landlords to schedule property viewings and complete
                   your payment process.
                 </p>
               </div>
