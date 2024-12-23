@@ -38,12 +38,12 @@ function FAQ() {
   return (
     <section className="py-16 mb-10">
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl font-bold mb-8">Frequently asked questions</h2>
-        <div className="w-full max-w-3xl mx-auto">
+        <h2 className="text-4xl font-bold mb-8 text-center ">Frequently asked questions</h2>
+        <div className="w-[80%]  mx-auto">
           {faqs.map((faq, index) => (
-            <div key={index} className="mb-4">
+            <div key={index} className="mb-4 text-lg">
               <button
-                className="flex justify-between items-center w-full text-left p-4 bg-gray-100 hover:bg-gray-200 rounded-lg"
+                className="flex justify-between items-center w-full text-left p-4 bg-white hover:bg-gray-200 rounded-lg"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
                 <span className="font-medium">{faq.question}</span>

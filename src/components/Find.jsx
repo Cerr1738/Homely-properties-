@@ -5,7 +5,7 @@ function Find() {
    const navigate = useNavigate();
 
   return (
-    <section className="bg-[#A8A5A4] py-16 mb-[100px]">
+    <section className="bg-[#503025] py-16 mb-[10px]">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">

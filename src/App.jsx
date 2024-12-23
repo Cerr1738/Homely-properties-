@@ -14,8 +14,10 @@ import ViewAccomodation from "./components/ViewAccomodation";
 import ManageListing from "./components/ManageListing";
 import PropertyCard from "./components/PropertyCard";
 import EditPropertyModal from "./components/EditPropertyModal";
-
-
+import AddListing from "./components/AddListing";
+import Subscription from "./components/Subscription";
+import WatchList from "./components/WatchList";
+import Tenants from "./components/Tenants"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -43,6 +45,10 @@ function App() {
           <Route path="/manage-listing" element={<ManageListing/>}></Route>
           <Route path="/property-card" element={<PropertyCard/>}></Route>
           <Route path="/edit" element={<EditPropertyModal/>}></Route>
+          <Route path="/add-listing" element={<AddListing/>}></Route>
+          <Route path="/subscription" element={<Subscription/>}></Route>
+          <Route path="/watchlist" element={<WatchList/>}></Route>
+          <Route path="/tenants" element={<Tenants/>}></Route>
 
 
         </Routes>

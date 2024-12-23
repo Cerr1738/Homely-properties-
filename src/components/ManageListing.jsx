@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import PropertyCard from "./PropertyCard";
 import EditPropertyModal from "./EditPropertyModal";
 import { ArrowLeft, Search } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import property from "../images/house1.jpeg";
 import Header from "./Header";
+import FAQ from "./FAQ";
+import { FiSearch, FiSliders } from "react-icons/fi";
 
 const sampleProperties = Array(6)
   .fill()
@@ -19,6 +21,8 @@ const sampleProperties = Array(6)
   }));
 
 function ManageListings() {
+  const navigate = useNavigate();
+
   const [searchTerm, setSearchTerm] = useState("");
   const [properties, setProperties] = useState(sampleProperties);
   const [editingProperty, setEditingProperty] = useState(null);
@@ -50,29 +54,45 @@ function ManageListings() {
       <Header />
 
       <main className="container mx-auto px-4 py-8">
-        <div className="flex items-center justify-between mb-8">
-          <div className="flex items-center gap-4">
-            <Link to="/" className="p-2 hover:bg-gray-100 rounded-full">
+        <div className="flex items-center justify-between mb-8 mx-[80px]">
+          <div className="flex flex-col md:flex-row items-center gap-4 p-2 md:p-4">
+            <Link
+              to="/"
+              className="p-2 hover:bg-gray-100 rounded-full flex-shrink-0"
+            >
               <ArrowLeft className="h-6 w-6" />
             </Link>
-            <div className="relative flex-1 max-w-xl">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-              <input
-                type="text"
-                placeholder="Search"
-                className="w-full pl-10 pr-4 py-2 border rounded-md"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
+
+            <div className="relative flex-1 w-full md:max-w-xl">
+              <div className="flex items-center border border-gray-300 rounded-full px-4 py-2 w-full shadow-sm">
+                <button className="flex-shrink-0 text-gray-500 hover:text-gray-700 mr-3">
+                  <FiSliders className="h-5 w-5" />
+                </button>
+
+                <input
+                  type="text"
+                  placeholder="Search"
+                  className="flex-1 outline-none bg-transparent text-gray-700"
+                />
+
+                <button className="flex-shrink-0 text-gray-500 hover:text-gray-700 ">
+                  <FiSearch className="h-5 w-5"  
+                  />
+                </button>
+              </div>
             </div>
           </div>
-          <button className="bg-[#8B5E34] text-white px-6 py-2 rounded-md hover:bg-[#704B2A]">
+
+          <button className="bg-[#966453] text-white px-6 py-2 rounded-md hover:bg-[#704B2A]"
+          onClick={() => navigate("/add-listing")}>
             Add listing
           </button>
         </div>
 
-        <h1 className="text-2xl font-bold mb-6">Property Listings</h1>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <h1 className="text-2xl font-bold mb-6 ml-[80px] text-[#503025]">
+          Property Listings
+        </h1>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mx-[80px]">
           {properties.map((property) => (
             <PropertyCard
               key={property.id}
@@ -90,43 +110,8 @@ function ManageListings() {
             onClose={handleCloseEdit}
           />
         )}
-
-        <section className="mt-16">
-          <h2 className="text-2xl font-bold mb-8">
-            Frequently asked questions
-          </h2>
-          <div className="space-y-4">
-            {[
-              "What is Homely apartment?",
-              "How do I sign up on the platform?",
-              "Can I filter apartments by location, budget, and type?",
-              "How do I contact an agent for more details?",
-              "Are the accommodations verified?",
-              "Can I schedule a property viewing?",
-              "Lorem ipsum dolor sit amet?",
-            ].map((question, index) => (
-              <div key={index} className="border rounded-lg p-4">
-                <button className="flex justify-between items-center w-full text-left">
-                  <span>{question}</span>
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </button>
-              </div>
-            ))}
-          </div>
-        </section>
       </main>
+      <FAQ />
     </div>
   );
 }

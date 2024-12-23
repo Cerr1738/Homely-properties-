@@ -7,10 +7,10 @@ const NavBar = () => {
 
   return (
     <header className="border-b bg-white">
-      <nav className="p-4 bg-[#503025]  flex items-center justify-between gap-40 ">
+      <nav className="p-4 bg-[#503025]  flex items-center justify-between font-small">
         <div >
           <Link to="/">
-            <img src={Logo} alt="Logo" />
+            <img src={Logo} alt="Logo" className=" mx-[100px]" />
           </Link>
         </div>
 

@@ -22,9 +22,9 @@ function PropertyCard({ property, onDelete, onEdit }) {
       <div className="flex gap-2 p-4 border-t">
         <button
           onClick={() => onDelete(property.id)}
-          className="flex-1 bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600"
+          className=" bg-[pink] text-white w-[100px] rounded hover:bg-red-600"
         >
-          Delete
+           &#128465;
         </button>
         <button
           onClick={() => onEdit(property.id)}

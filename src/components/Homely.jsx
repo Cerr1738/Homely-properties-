@@ -20,7 +20,7 @@ const Homely = () => {
       <img
         src={image1}
         alt="Homely Property"
-        className="w-full max-w-[400px] lg:max-w-[600px] h-auto rounded-[30px] shadow-lg"
+        className="w-full max-w-[200px] lg:max-w-[600px] h-auto rounded-[30px]  shadow-lg"
       />
       </div>
     </div>

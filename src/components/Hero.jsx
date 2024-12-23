@@ -1,15 +1,18 @@
-import React from 'react';
-import hero from '../images/Hero.png';
+import React from "react";
+import hero from "../images/Hero.png";
+import { useNavigate } from "react-router-dom";
 
 function Hero() {
+  const navigate = useNavigate();
+
   return (
     <section className="relative h-[500px] flex items-center justify-center text-white">
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage:`url(${hero})`,
-          backgroundColor: 'rgba(0,0,0,0.4)',
-          backgroundBlendMode: 'overlay'
+          backgroundImage: `url(${hero})`,
+          backgroundColor: "rgba(0,0,0,0.4)",
+          backgroundBlendMode: "overlay",
         }}
       />
       <div className="relative text-center space-y-6 px-4">
@@ -17,7 +20,10 @@ function Hero() {
           Showcase Your Homes with
           <div>Homely Properties</div>
         </h1>
-        <button className="bg-[#E6C98F] hover:bg-[#D4B87E] text-black px-6 py-2 rounded">
+        <button
+          className="bg-[#E6C98F] hover:bg-[#D4B87E] text-black px-6 py-2 rounded"
+          onClick={() => navigate("/add-listing")}
+        >
           Add listing
         </button>
       </div>
@@ -26,4 +32,3 @@ function Hero() {
 }
 
 export default Hero;
-
