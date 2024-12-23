@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import API from "../API"; // Import API setup
+import API from "../API"; 
 import Homely from "./Homely";
 import AppleLogo from "../images/AppleLogo.png";
 import GoogleLogo from "../images/GoogleLogo.png";
@@ -10,7 +10,7 @@ import NavBar from "./NavBar";
 const UserSignUp = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    fullname: "",
+    name: "",
     email: "",
     password: "",
   });
@@ -25,14 +25,15 @@ const UserSignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await API.post("/auth/register", formData); // Adjust API endpoint as needed
+      const response = await API.post("/auth/register", formData); 
       setSuccess("Account created successfully!");
-      localStorage.setItem("token", response.data.token); // Save token if needed
-      navigate("/dashboard"); // Redirect after successful signup
+      localStorage.setItem("token", response.data.token); 
+      navigate("/tenants"); 
     } catch (error) {
       setError(error.response?.data?.message || "Signup failed. Please try again.");
     }
   };
+
 
   return (
     <div>
@@ -59,15 +60,15 @@ const UserSignUp = () => {
                 Enter details below to create your real property account:
               </p>
 
-              {/* Show Error or Success Messages */}
+            
               {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
               {success && <p className="text-green-500 text-sm mb-4">{success}</p>}
 
-              {/* Form Inputs */}
+              
               <input
                 type="text"
-                name="fullname"
-                value={formData.fullname}
+                name="name"
+                value={formData.name}
                 onChange={handleChange}
                 placeholder="Fullname"
                 required
@@ -92,7 +93,7 @@ const UserSignUp = () => {
                 className="p-3 rounded-md border border-gray-400 mb-6 w-full focus:ring-2 focus:ring-[#966453]"
               />
 
-              {/* Register Button */}
+            
               <button
                 type="submit"
                 className="w-full py-3 bg-[#966453] text-white font-medium rounded-md hover:bg-[#82513a] transition"
@@ -100,7 +101,7 @@ const UserSignUp = () => {
                 Register
               </button>
 
-              {/* Alternative Sign-In Options */}
+              
               <div className="text-center mt-6">
                 <h3 className="text-lg mb-2">Sign In with</h3>
                 <div className="flex justify-center gap-4">

@@ -12,7 +12,7 @@ const LandlordSignUp = () => {
   const navigate = useNavigate();
   const [fileName, setFileName] = useState("");
   const [formData, setFormData] = useState({
-    fullname: "",
+    name: "",
     email: "",
     password: "",
   });
@@ -75,9 +75,9 @@ const LandlordSignUp = () => {
               </p>
               <input
                 type="text"
-                name="fullname"
+                name="name"
                 placeholder="Fullname"
-                value={formData.fullname}
+                value={formData.name}
                 onChange={handleChange}
                 required
                 className="p-3 rounded-md border border-gray-400 mb-4 w-full focus:ring-2 focus:ring-[#966453]"

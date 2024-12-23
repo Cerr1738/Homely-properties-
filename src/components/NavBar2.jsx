@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import Logo from "../images/Logo.png";
+import avatar from "../images/avatar.png"
 
 const NavBar2 = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -57,9 +58,7 @@ const NavBar2 = () => {
                 </li>
             </ul>
             </div>
-            
-      </nav>
-      <div className="flex items-center gap-4 mx-[120px]">
+            <div className="flex items-center gap-4 mx-[120px]">
                 <button className="p-2 rounded-full hover:bg-gray-100">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                     <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
@@ -73,16 +72,11 @@ const NavBar2 = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <button 
-                  className="md:hidden p-2 rounded-full hover:bg-gray-100"
-                  onClick={toggleMobileMenu}
-                  aria-label="Toggle mobile menu"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
-                </button>
+              
               </div>
+            
+      </nav>
+      
             
     </header>
   );
