@@ -43,10 +43,7 @@ function App() {
           <Route path="/signup" element={<SignUp />}></Route>
           <Route path="/forget-password" element={<ForgotPassword />}></Route>
           <Route path="/continue" element={<Continue />}></Route>
-          <Route
-            path="/view-accommodations"
-            element={<ViewAccomodation />}
-          ></Route>
+          <Route path="/view-accommodations" element={<ViewAccomodation />}></Route>
           <Route path="/manage-listing" element={<ManageListing/>}></Route>
           <Route path="/property-card" element={<PropertyCard/>}></Route>
           <Route path="/edit" element={<EditPropertyModal/>}></Route>
@@ -57,7 +54,7 @@ function App() {
           <Route path="/payment-history" element={<PaymentHistory/>}></Route>
           <Route path="/landlord-profile" element={<LandlordProfile/>}></Route>
           <Route path ="/edit-profile" element={<EditProfile/>}></Route>
-          <Route path="tenant-profile" element={<TenantProfile/>}></Route>
+          <Route path="/tenant-profile" element={<TenantProfile/>}></Route>
           <Route path ="/edit-profile2" element={<EditProfile2/>}></Route>
 
 
