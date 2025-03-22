@@ -16,7 +16,6 @@ import PropertyCard from "./components/PropertyCard";
 import EditPropertyModal from "./components/EditPropertyModal";
 import AddListing from "./components/AddListing";
 import Subscription from "./components/Subscription";
-import WatchList from "./components/WatchList";
 import Tenants from "./components/Tenants"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Payment from "./components/Payment";
