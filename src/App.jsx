@@ -51,8 +51,7 @@ function App() {
           <Route path="/property-card" element={<PropertyCard/>}></Route>
           <Route path="/edit" element={<EditPropertyModal/>}></Route>
           <Route path="/add-listing" element={<AddListing/>}></Route>
-          <Route path="/subscription" element={<Subscription/>}></Route>
-          <Route path="/watchlist" element={<WatchList/>}></Route>
+          <Route path="/subscription" element={<Subscription/>}></Route
           <Route path="/tenants" element={<Tenants/>}></Route>
           <Route path="/payment" element={<Payment/>}></Route>
           <Route path="/payment-history" element={<PaymentHistory/>}></Route>
