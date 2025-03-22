@@ -2,6 +2,7 @@ import React from 'react';
 import home from '../images/iconpark.png';
 import logo from '../images/Logo.png'
 
+
 function Footer() {
   return (
 <footer className="bg-white border-t border-black">

@@ -16,7 +16,7 @@ function LandLords() {
         <Stats />
         <PropertyGrid />
         <FAQ />
-        <CTASection />
+        <CTASection /> 
       </main>
       
       <Footer />

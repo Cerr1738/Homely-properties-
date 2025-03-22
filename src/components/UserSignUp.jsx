@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import API from "../API"; 
+import API from "../API";
 import Homely from "./Homely";
 import AppleLogo from "../images/AppleLogo.png";
 import GoogleLogo from "../images/GoogleLogo.png";
 import arrow from "../images/arrow.png";
 import NavBar from "./NavBar";
+import {motion} from 'framer-motion'
 
 const UserSignUp = () => {
   const navigate = useNavigate();
@@ -25,15 +26,31 @@ const UserSignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await API.post("/auth/register", formData); 
+      const response = await API.post("/auth/register", formData);
       setSuccess("Account created successfully!");
-      localStorage.setItem("token", response.data.token); 
-      navigate("/tenants"); 
+      localStorage.setItem("token", response.data.token);
+      navigate("/tenants");
     } catch (error) {
-      setError(error.response?.data?.message || "Signup failed. Please try again.");
+      setError(
+        error.response?.data?.message || "Signup failed. Please try again."
+      );
     }
   };
 
+  const popInanimate = {
+    initial: {
+      scale: 0,
+      opacity: 0,
+    },
+    animate: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        delay: 0.5,
+        duration: 0.5,
+      },
+    },
+  };
 
   return (
     <div>
@@ -44,7 +61,12 @@ const UserSignUp = () => {
             <Homely />
           </div>
 
-          <div className="flex-1 max-w-md w-full bg-white rounded-[25px] p-6 shadow-md">
+          <motion.div
+            variants={popInanimate}
+            initial="initial"
+            whileInView="animate"
+            className="flex-1 max-w-md w-full bg-white rounded-[25px] p-6 shadow-md"
+          >
             <form className="flex flex-col" onSubmit={handleSubmit}>
               <div className="mb-4">
                 <img
@@ -55,16 +77,18 @@ const UserSignUp = () => {
                 />
               </div>
 
-              <h2 className="text-center text-2xl font-semibold mb-2">Create Account</h2>
+              <h2 className="text-center text-2xl font-semibold mb-2">
+                Create Account
+              </h2>
               <p className="text-left text-sm mb-6">
                 Enter details below to create your real property account:
               </p>
 
-            
               {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
-              {success && <p className="text-green-500 text-sm mb-4">{success}</p>}
+              {success && (
+                <p className="text-green-500 text-sm mb-4">{success}</p>
+              )}
 
-              
               <input
                 type="text"
                 name="name"
@@ -93,7 +117,6 @@ const UserSignUp = () => {
                 className="p-3 rounded-md border border-gray-400 mb-6 w-full focus:ring-2 focus:ring-[#966453]"
               />
 
-            
               <button
                 type="submit"
                 className="w-full py-3 bg-[#966453] text-white font-medium rounded-md hover:bg-[#82513a] transition"
@@ -101,16 +124,23 @@ const UserSignUp = () => {
                 Register
               </button>
 
-              
               <div className="text-center mt-6">
                 <h3 className="text-lg mb-2">Sign In with</h3>
                 <div className="flex justify-center gap-4">
-                  <img src={AppleLogo} alt="Apple Logo" className="w-10 cursor-pointer" />
-                  <img src={GoogleLogo} alt="Google Logo" className="w-10 cursor-pointer" />
+                  <img
+                    src={AppleLogo}
+                    alt="Apple Logo"
+                    className="w-10 cursor-pointer"
+                  />
+                  <img
+                    src={GoogleLogo}
+                    alt="Google Logo"
+                    className="w-10 cursor-pointer"
+                  />
                 </div>
               </div>
             </form>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

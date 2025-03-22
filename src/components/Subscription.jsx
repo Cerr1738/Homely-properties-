@@ -23,10 +23,14 @@ const Subscription = () => {
             >
               Subscribe
             </button>
-            <button className="text-lg font-medium focus focus:border focus:border-[#B89D63] focus:text-[#B89D63] focus:p-2 focus:rounded-xl">
+            <button className="text-lg font-medium focus focus:border focus:border-[#B89D63] focus:text-[#B89D63] focus:p-2 focus:rounded-xl"
+            onClick={() => navigate("/payment")}
+            >
               Payment
             </button>
-            <button className="text-lg font-medium focus focus:border focus:border-[#B89D63] focus:text-[#B89D63] focus:p-2 focus:rounded-xl">
+            <button className="text-lg font-medium focus focus:border focus:border-[#B89D63] focus:text-[#B89D63] focus:p-2 focus:rounded-xl"
+             onClick={() => navigate("/payment-history")}
+             >
               Payment history
             </button>
           </div>

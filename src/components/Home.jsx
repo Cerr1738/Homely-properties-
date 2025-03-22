@@ -11,22 +11,74 @@ import CTASection from "./CTASection";
 import Footer from "./Footer";
 import { useNavigate } from "react-router-dom";
 import NavBar from "./NavBar";
-import money from '../images/money.png'
-import location from '../images/location.png'
-import search from '../images/search.png'
-
+import money from "../images/money.png";
+import location from "../images/location.png";
+import search from "../images/search.png";
+import { motion } from "framer-motion";
 const Home = () => {
   const navigate = useNavigate();
+
+  const popInanimate = {
+    initial: {
+      scale: 0,
+      opacity: 0,
+    },
+    animate: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        delay: 0.5,
+        duration: 0.5,
+      },
+    },
+  };
+
+  const fadeInTop = {
+    initial: {
+      opacity: 0,
+      y: 100
+    },
+    animate:{
+      opacity: 1,
+      y:0,
+      transition: {
+        delay: 0.5,
+        duration: 0.5,
+      },
+    },
+
+  }
+
+  const fadeInRight = {
+    initial: {
+      opacity: 0,
+      x: -100
+    },
+    animate:{
+      opacity: 1,
+      x:0,
+      transition: {
+        delay: 0.5,
+        duration: 0.5,
+      },
+    },
+
+  }
+
+
 
   return (
     <div>
       <NavBar />
       <div className="font-sans">
-        
         <section className="bg-[#F4F4F4]">
           <div className="container mx-auto flex flex-col lg:flex-row items-center p-6 lg:p-16 max-w-full">
-           
-            <div className="flex-1 text-center lg:text-left mb-8 lg:mb-0">
+            <motion.div
+              variants={popInanimate}
+              initial="initial"
+              whileInView="animate"
+              className="flex-1 text-center lg:text-left mb-8 lg:mb-0"
+            >
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5">
                 Discover Your Dream <br /> Home By Us
               </h1>
@@ -42,58 +94,75 @@ const Home = () => {
               >
                 View Property
               </button>
-            </div>
-          
-            <div className="flex-1">
+            </motion.div>
+
+            <motion.div 
+             variants={popInanimate}
+             initial="initial"
+             whileInView="animate"
+            className="flex-1">
               <img
                 src={house1}
                 alt="Hero Home"
                 className="rounded-lg w-[500px] max-w-md lg:max-w-lg h-[500px]"
               />
-            </div>
+            </motion.div>
           </div>
         </section>
 
-      
-        <section className="bg-white py-10">
+        <motion.section 
+          variants={fadeInTop}
+          initial="initial"
+          whileInView="animate"
+
+        className="bg-white py-10">
           <div className="container mx-auto p-8 rounded-lg border shadow-2xl max-w-full sm:w-[600px]">
             <h2 className="text-center text-xl font-semibold mb-4">
               Search Available Houses
             </h2>
             <div className="flex flex-col lg:flex-row gap-6 lg:items-center justify-between">
-            
               <div className="flex items-center gap-2">
                 <img src={location} alt="Location Icon" className="w-7 h-7" />
                 <p className="text-sm font-medium">Location</p>
               </div>
-             
+
               <select className="border border-gray-300 rounded-md text-sm p-2 text-center focus:outline-none focus:ring-2 focus:ring-blue-400">
                 <option>Apartment Type</option>
                 <option>House</option>
                 <option>Flat</option>
               </select>
-           
+
               <div className="flex items-center gap-2">
                 <img src={money} alt="Price Range Icon" className="w-7 h-7" />
                 <p className="text-sm font-medium">Price Range</p>
               </div>
-             
+
               <p className="text-sm font-medium">Rent</p>
-             
+
               <button className=" text-white px-4 py-2 rounded-md flex items-center gap-2 hover:bg-blue-600 transition-all">
                 <img src={search} alt="Search Icon" className="w-5 h-5" />
               </button>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         <section className="bg-gray-50 py-10 mx-4 md:mx-[120px]">
           <div className="container mx-auto p-6">
-            <h2 className="text-2xl font-bold text-center mb-8">
+            <motion.h2 
+            variants={fadeInTop}
+            initial="initial"
+            whileInView="animate"
+
+            className="text-2xl font-bold text-center mb-8">
               Our Popular Homes
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              
+            </motion.h2>
+
+            <motion.div 
+             variants={fadeInTop}
+             initial="initial"
+             whileInView="animate"
+
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[house1, nigerian, house3].map((image, index) => (
                 <div
                   key={index}
@@ -118,18 +187,27 @@ const Home = () => {
                   </button>
                 </div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </section>
 
-    
         <section className="bg-white py-10 px-4 lg:px-6">
           <div className="container mx-auto p-6">
-            <h2 className="text-3xl font-bold text-center mb-10">
+            <motion.h2 
+            variants={fadeInTop}
+            initial="initial"
+            whileInView="animate"
+
+            className="text-3xl font-bold text-center mb-10">
               Easy Steps To Secure An Apartment With Homely
-            </h2>
-            <div className="flex flex-col gap-12">
-              
+            </motion.h2>
+
+
+            <motion.div 
+            variants={fadeInRight}
+            initial="initial"
+            whileInView="animate"
+            className="flex flex-col gap-12">
               {[youngman, whiteman, hand].map((image, index) => (
                 <div
                   key={index}
@@ -163,12 +241,11 @@ const Home = () => {
                   </div>
                 </div>
               ))}
-            </div>
+            </motion.div>
             <FAQ />
           </div>
         </section>
 
-      
         <CTASection />
         <Footer />
       </div>

@@ -3,9 +3,25 @@ import { useNavigate } from "react-router-dom";
 import "../App.css";
 import Homely from "./Homely";
 import NavBar from "./NavBar";
+import {motion} from "framer-motion"
 
 const Login = () => {
   const navigate = useNavigate();
+
+  const popInanimate = {
+    initial: {
+      scale: 0,
+      opacity: 0,
+    },
+    animate: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        delay: 0.5,
+        duration: 0.5,
+      },
+    },
+  };
 
   return (
     <div>
@@ -19,8 +35,14 @@ const Login = () => {
         </div>
 
        
-        <div className="flex-1 max-w-md w-full  bg-white rounded-[25px] p-6 shadow-md">
-          <form className="flex flex-col items-center h-[500px]">
+        <motion.div 
+        variants={popInanimate}
+        initial="initial"
+        whileInView="animate"
+        className="flex-1 max-w-md w-full  bg-white rounded-[25px] p-6 shadow-md">
+          <form 
+          
+          className="flex flex-col items-center h-[500px]">
            
             <button
               type="button"
@@ -42,7 +64,7 @@ const Login = () => {
               Sign Up As Landlord
             </button>
           </form>
-        </div>
+        </motion.div>
       </div>
     </div>
     </div>

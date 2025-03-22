@@ -20,9 +20,144 @@ import arrow from "../images/arrow.png";
 import Heart from "../images/Heart.png";
 import { useNavigate } from "react-router-dom";
 import NavBar from "./NavBar";
+import { motion } from "framer-motion";
 
 const ViewAccommodation = () => {
   const navigate = useNavigate();
+
+  const fadeInRight = {
+    initial: {
+      opacity: 0,
+      x: -100,
+    },
+    animate: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: 0.5,
+        duration: 0.5,
+      },
+    },
+  };
+
+  const fadeInRight2 = {
+    initial: {
+      opacity: 0,
+      x: -100,
+    },
+    animate: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: 0.8,
+        duration: 0.5,
+      },
+    },
+  };
+
+  const fadeInRight3 = {
+    initial: {
+      opacity: 0,
+      x: -100,
+    },
+    animate: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: 0.9,
+        duration: 0.6,
+      },
+    },
+  };
+  const fadeInRight4 = {
+    initial: {
+      opacity: 0,
+      x: -100,
+    },
+    animate: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: 1,
+        duration: 0.7,
+      },
+    },
+  };
+
+  const fadeInTop = {
+    initial: {
+      opacity: 0,
+      y: 100,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 1.1,
+        duration: 0.5,
+      },
+    },
+  };
+
+  const fadeInBottom1 = { 
+    initial: {
+      opacity: 0,
+      y: -100,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 1,
+        duration: 0.5,
+      },
+    },
+  };
+
+  const fadeInBottom2 = {
+    initial: {
+      opacity: 0,
+      y: -100,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 1.1, 
+        duration: 0.5,
+      },
+    },
+  };
+
+  const fadeInBottom3 = {
+    initial: {
+      opacity: 0,
+      y: -100,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 1.2, 
+        duration: 0.5,
+      },
+    },
+  };
+
+  const fadeInBottom4 = {
+    initial: {
+      opacity: 0,
+      y: -100,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 1.3, 
+        duration: 0.5,
+      },
+    },
+  };
 
   return (
     <div>
@@ -31,50 +166,84 @@ const ViewAccommodation = () => {
       <div className="bg-white text-gray-900">
         <div className="max-w-6xl mx-[100px] px-4 py-8">
           <div className=" flex flex-row  mb-10 justify-between ">
-            <img
+            <motion.img
               src={arrow}
               alt=""
+              variants={fadeInRight}
+              initial="initial"
+              whileInView="animate"
               className="gap-10 w-[30px] h-[30px]"
               onClick={() => navigate("/landlords")}
             />
-            <h2 className="text-center text-amber-950 font-bold text-2xl">
+            <motion.h2
+              variants={fadeInRight}
+              initial="initial"
+              whileInView="animate"
+              className="text-center text-amber-950 font-bold text-2xl"
+            >
               Accomodation Details
-            </h2>
-            <img src={Heart} alt=""
-            className="w-[30px] h-[30px]"
-             />
+            </motion.h2>
+            <motion.img
+              src={Heart}
+              alt=""
+              variants={fadeInRight}
+              initial="initial"
+              whileInView="animate"
+              className="w-[30px] h-[30px]"
+            />
           </div>
-          <h2 className="text-3xl font-bold mb-4">
+
+          <motion.h2
+            variants={fadeInRight2}
+            initial="initial"
+            whileInView="animate"
+            className="text-3xl font-bold mb-4"
+          >
             Wisdom Lodge, Port-Harcourt, Rivers State
-          </h2>
+          </motion.h2>
 
           <div className=" grid-cols-2 md:grid-cols-3 gap-4">
-            <div className="relative col-span-3 md:col-span-3 h-[300px]">
-              <video className="w-full h-full object-cover rounded-lg" >
-                <source src={video1} type="video/mp4" alt="Living Room"  />
+            <motion.div
+              variants={fadeInTop}
+              initial="initial"
+              whileInView="animate"
+              className="relative col-span-3 md:col-span-3 h-[300px]"
+            >
+              <video className="w-full h-full object-cover rounded-lg">
+                <source src={video1} type="video/mp4" alt="Living Room" />
               </video>
               <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-black/50 text-white font-semibold text-xl">
                 Take a Tour
               </div>
-            </div>
+            </motion.div>
 
             <div className="md:flex grid gap-4 mt-4 items-center">
               <div className="rounded-lg overflow-hidden">
-                <img
+                <motion.img
+                  variants={fadeInRight2}
+                  initial="initial"
+                  whileInView="animate"
+                 
                   src={pic1}
                   alt="Living Room"
                   className="w-[700px] h-[500px] object-cover"
                 />
               </div>
               <div className="rounded-lg overflow-hidden">
-                <img
+                <motion.img
+                variants={fadeInRight3}
+                initial="initial"
+                whileInView="animate"
                   src={pic2}
                   alt="Bedroom"
                   className="w-[700px] h-[500px] object-cover"
                 />
               </div>
               <div className="rounded-lg overflow-hidden">
-                <img
+                <motion.img
+                variants={fadeInRight4}
+                initial="initial"
+                whileInView="animate"
                   src={pic3}
                   alt="Kitchen"
                   className="w-[700px] h-[500px] object-cover"
@@ -85,36 +254,59 @@ const ViewAccommodation = () => {
         </div>
 
         <div className="max-w-7xl mx-[80px] px-8 py-8 bg-white rounded-md mb-[80px]">
-          <h3 className="text-xl font-semibold mb-5">3 bedroom apartment</h3>
+          <motion.h3 
+          variants={fadeInBottom1}
+          initial="initial"
+          whileInView="animate"
+          className="text-xl font-semibold mb-5">3 bedroom apartment</motion.h3>
           <div className="flex flex-col gap-8">
             <div className="text-left ">
-              <p className="text-3xl text-[#503025] font-semibold mb-5">
+              <motion.p 
+               variants={fadeInBottom2}
+               initial="initial"
+               whileInView="animate"
+              className="text-3xl text-[#503025] font-semibold mb-5">
                 ₦500,000.00/yr
-              </p>
-              <button className="bg-[#966453] text-white py-2 px-4 rounded items-center">
+              </motion.p>
+              <motion.button 
+                variants={fadeInBottom3}
+                initial="initial"
+                whileInView="animate"
+
+              className="bg-[#966453] text-white py-2 px-4 rounded items-center">
                 Contact Agent
-              </button>
+              </motion.button>
             </div>
 
-            <div className="">
-            <p className="text-[#503025] font-bold">Description</p>
-            <p className="text-[#1B1B1B] leading-relaxed w-[300px] md:w-[1000px] ">
-              Our hostel accommodation provides a conducive environment for
-              students to focus on their studies while enjoying a balanced
-              social life. Each room is equipped with study desks, ample storage
-              space, and comfortable beds to ensure a restful stay. Our communal
-              kitchens are fully equipped, encouraging students to prepare meals
-              together and share culinary experiences. Regular events and
-              activities are organized to foster a sense of community, making
-              our hostel more than just a place to live. it's a home away from
-              home where students can grow academically and personally
-            </p>
-            </div>
-            
+            <motion.div 
+             variants={fadeInBottom4}
+             initial="initial"
+             whileInView="animate"
+
+            className="">
+              <p className="text-[#503025] font-bold">Description</p>
+              <p className="text-[#1B1B1B] leading-relaxed w-[300px] md:w-[1000px] ">
+                Our hostel accommodation provides a conducive environment for
+                students to focus on their studies while enjoying a balanced
+                social life. Each room is equipped with study desks, ample
+                storage space, and comfortable beds to ensure a restful stay.
+                Our communal kitchens are fully equipped, encouraging students
+                to prepare meals together and share culinary experiences.
+                Regular events and activities are organized to foster a sense of
+                community, making our hostel more than just a place to live.
+                it's a home away from home where students can grow academically
+                and personally
+              </p>
+            </motion.div>
           </div>
 
           <div className="flex flex-col md:flex-row gap-10 items-center mt-6">
-            <div>
+            <motion.div
+              variants={fadeInRight2}
+              initial="initial"
+              whileInView="animate"
+             
+            >
               <p className="font-medium  mb-5">Building Facilities:</p>
               <ul className="list-none list-inside grid grid-cols-2 gap-6">
                 <div className="flex flex-row  gap-3">
@@ -134,8 +326,13 @@ const ViewAccommodation = () => {
                   <li>Movie Room</li>
                 </div>
               </ul>
-            </div>
-            <div>
+            </motion.div>
+            <motion.div
+              variants={fadeInRight3}
+              initial="initial"
+              whileInView="animate"
+             
+            >
               <p className="font-medium mb-5">Apartment Facilities:</p>
               <ul className=" list-inside list-none grid grid-cols-2 gap-6">
                 <div className="flex flex-row  gap-3">
@@ -155,9 +352,14 @@ const ViewAccommodation = () => {
                   <li>Kitchen</li>
                 </div>
               </ul>
-            </div>
+            </motion.div>
 
-            <div className="p-4 bg-gray-50 rounded-lg shadow-md w-80">
+            <motion.div 
+              variants={fadeInRight4}
+              initial="initial"
+              whileInView="animate"
+             
+            className="p-4 bg-gray-50 rounded-lg shadow-md w-80">
               <div className="flex items-center justify-between mb-3">
                 <div>
                   <span className="text-[#503025] font-medium">
@@ -193,13 +395,20 @@ const ViewAccommodation = () => {
                   3.5 <span className="text-[#503025]">(350 reviews)</span>
                 </span>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
 
         <div className="max-w-7xl mx-[80px] px-4 py-8 mb-[100px]">
-          <h3 className="text-2xl font-bold mb-4">Location</h3>
-          <img
+          <motion.h3 
+          variants={fadeInBottom1}
+          initial="initial"
+          whileInView="animate"
+          className="text-2xl font-bold mb-4">Location</motion.h3>
+          <motion.img
+           variants={fadeInBottom2}
+           initial="initial"
+           whileInView="animate"
             src={pic4}
             alt="Map Location"
             className="w-full h-80 object-cover rounded-lg"
@@ -207,11 +416,20 @@ const ViewAccommodation = () => {
         </div>
 
         <div className="max-w-7xl mx-[80px] px-4 py-8 mb-[100px]">
-          <h3 className="text-2xl font-bold mb-4">Similar Listings</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
+          <motion.h3   
+          variants={fadeInBottom1}
+          initial="initial"
+          whileInView="animate"
+          className="text-2xl font-bold mb-4">Similar Listings</motion.h3>
+          <motion.div 
+           variants={fadeInRight2}
+           initial="initial"
+           whileInView="animate"
+          className="grid grid-cols-1 sm:grid-cols-4 gap-4">
             {[1, 2, 3, 4].map((item) => (
               <div key={item} className="bg-white rounded-md shadow-md p-4">
                 <img
+                 
                   src={pic5}
                   alt="Hosana Lodge"
                   className="w-full h-32 object-cover rounded-md"
@@ -225,7 +443,7 @@ const ViewAccommodation = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
         <Find />
         <Footer />

@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import API from "../API"; 
+import API from "../API";
 
 import Homely from "./Homely";
 import AppleLogo from "../images/AppleLogo.png";
 import GoogleLogo from "../images/GoogleLogo.png";
 import arrow from "../images/arrow.png";
 import NavBar from "./NavBar";
+import { motion } from "framer-motion";
 
 const LandlordSignUp = () => {
   const navigate = useNavigate();
@@ -33,21 +34,34 @@ const LandlordSignUp = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-     
       await API.post("/auth/register", formData);
       alert("Registration successful!");
 
-    
       const loginResponse = await API.post("/auth/login", {
         email: formData.email,
         password: formData.password,
       });
 
       localStorage.setItem("token", loginResponse.data.token);
-      navigate("/landlords"); 
+      navigate("/landlords");
     } catch (err) {
       setError(err.response?.data?.message || "Registration failed");
     }
+  };
+
+  const popInanimate = {
+    initial: {
+      scale: 0,
+      opacity: 0,
+    },
+    animate: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        delay: 0.5,
+        duration: 0.5,
+      },
+    },
   };
 
   return (
@@ -58,7 +72,12 @@ const LandlordSignUp = () => {
           <div className="flex-1">
             <Homely />
           </div>
-          <div className="flex-1 max-w-md w-full bg-white rounded-[25px] p-6 shadow-md">
+          <motion.div
+          variants={popInanimate}
+          initial="initial"
+          whileInView="animate"
+          
+           className="flex-1 max-w-md w-full bg-white rounded-[25px] p-6 shadow-md">
             <form className="flex flex-col" onSubmit={handleRegister}>
               <div className="mb-4">
                 <img
@@ -68,7 +87,9 @@ const LandlordSignUp = () => {
                   onClick={() => navigate("/login")}
                 />
               </div>
-              <h1 className="text-center text-2xl font-bold mb-2">Create Account</h1>
+              <h1 className="text-center text-2xl font-bold mb-2">
+                Create Account
+              </h1>
               {error && <p className="text-red-500 text-center">{error}</p>}
               <p className="text-left text-sm mb-6">
                 Enter details below to create your real property account:
@@ -106,7 +127,9 @@ const LandlordSignUp = () => {
                   onChange={handleFileChange}
                   className="absolute inset-0 opacity-0 cursor-pointer"
                 />
-                <p className="w-full text-gray-700">{fileName || "Upload ID"}</p>
+                <p className="w-full text-gray-700">
+                  {fileName || "Upload ID"}
+                </p>
               </div>
               <button
                 type="submit"
@@ -117,12 +140,20 @@ const LandlordSignUp = () => {
               <div className="text-center mt-6">
                 <h3 className="text-lg mb-2">Sign In with</h3>
                 <div className="flex justify-center gap-4">
-                  <img src={AppleLogo} alt="Apple Logo" className="w-10 cursor-pointer" />
-                  <img src={GoogleLogo} alt="Google Logo" className="w-10 cursor-pointer" />
+                  <img
+                    src={AppleLogo}
+                    alt="Apple Logo"
+                    className="w-10 cursor-pointer"
+                  />
+                  <img
+                    src={GoogleLogo}
+                    alt="Google Logo"
+                    className="w-10 cursor-pointer"
+                  />
                 </div>
               </div>
             </form>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

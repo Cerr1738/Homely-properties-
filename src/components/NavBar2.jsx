@@ -2,9 +2,12 @@ import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import Logo from "../images/Logo.png";
 import avatar from "../images/avatar.png"
+import { useNavigate } from "react-router-dom";
+
 
 const NavBar2 = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate()
 
   return (
     <header className="border-b bg-white">
@@ -70,6 +73,7 @@ const NavBar2 = () => {
                     src= {avatar}
                     alt="User Avatar" 
                     className="w-full h-full object-cover"
+                    onClick={() => navigate("/tenant-profile")}
                   />
                 </div>
               

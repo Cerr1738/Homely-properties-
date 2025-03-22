@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const stats = [
   {
@@ -23,10 +24,30 @@ const stats = [
   }
 ];
 
+const fadeInBottom2 = {
+  initial: {
+    opacity: 0,
+    y: -100,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.7,
+      duration: 0.5,
+    },
+  },
+};
+
+
 function Stats() {
   return (
     <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
+      <motion.div 
+      variants={fadeInBottom2}
+      initial="initial"
+      whileInView="animate"
+      className="container mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
@@ -40,7 +61,7 @@ function Stats() {
             </div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

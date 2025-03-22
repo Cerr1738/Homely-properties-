@@ -1,5 +1,6 @@
 import React from 'react';
 import property from '../images/house1.jpeg';
+import { motion } from 'framer-motion';
 
 const properties = Array(6).fill({
   title: "4 bedroom apartment",
@@ -10,12 +11,51 @@ const properties = Array(6).fill({
   image: property,
 });
 
+const fadeInRight = {
+  initial: {
+    opacity: 0,
+    x: -100,
+  },
+  animate: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      delay: 0.5,
+      duration: 0.5,
+    },
+  },
+};
+
+const fadeInTop = {
+  initial: {
+    opacity: 0,
+    y: 100,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 1.1,
+      duration: 0.5,
+    },
+  },
+};
+
+
 function PropertyGrid() {
   return (
     <section className="py-16">
       <div className="container mx-auto px-4 ">
-        <h2 className="text-3xl font-bold mb-8 ml-[80px] text-start text-[#503025]">Property Listing overview</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mx-[80px]">
+        <motion.h2 
+        variants={fadeInRight}
+        initial="initial"
+        whileInView="animate"
+        className="text-3xl font-bold mb-8 ml-[80px] text-start text-[#503025]">Property Listing overview</motion.h2>
+        <motion.div 
+         variants={fadeInTop}
+         initial="initial"
+         whileInView="animate"
+        className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mx-[80px]">
           {properties.map((property, index) => (
             <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
               <div className="relative h-48">
@@ -50,7 +90,7 @@ function PropertyGrid() {
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

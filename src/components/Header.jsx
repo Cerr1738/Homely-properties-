@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import logo from '../images/Logo.png';
 import avatar from '../images/avatar.png';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+
 
 const Header =() => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -50,7 +53,9 @@ const Header =() => {
               src= {avatar}
               alt="User Avatar" 
               className="w-full h-full object-cover"
+              onClick={() => navigate("/landlord-profile")}
             />
+            <h1>William Scott</h1>
           </div>
           <button 
             className="md:hidden p-2 rounded-full hover:bg-gray-100"

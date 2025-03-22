@@ -19,6 +19,12 @@ import Subscription from "./components/Subscription";
 import WatchList from "./components/WatchList";
 import Tenants from "./components/Tenants"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Payment from "./components/Payment";
+import PaymentHistory from "./components/PaymentHistory"
+import LandlordProfile from "./components/LandlordProfile";
+import EditProfile from "./components/EditProfile";
+import TenantProfile from "./components/TenantProfile";
+import EditProfile2 from "./components/EditProfile2"
 
 function App() {
   return (
@@ -49,6 +55,14 @@ function App() {
           <Route path="/subscription" element={<Subscription/>}></Route>
           <Route path="/watchlist" element={<WatchList/>}></Route>
           <Route path="/tenants" element={<Tenants/>}></Route>
+          <Route path="/payment" element={<Payment/>}></Route>
+          <Route path="/payment-history" element={<PaymentHistory/>}></Route>
+          <Route path="/landlord-profile" element={<LandlordProfile/>}></Route>
+          <Route path ="/edit-profile" element={<EditProfile/>}></Route>
+          <Route path="tenant-profile" element={<TenantProfile/>}></Route>
+          <Route path ="/edit-profile2" element={<EditProfile2/>}></Route>
+
+
 
 
         </Routes>
