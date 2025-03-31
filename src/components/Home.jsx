@@ -70,9 +70,9 @@ const Home = () => {
   return (
     <div>
       <NavBar />
-      <div className="font-sans">
+      <div className="font-sans ">
         <section className="bg-[#F4F4F4]">
-          <div className="container mx-auto flex flex-col lg:flex-row items-center p-6 lg:p-16 max-w-full">
+          <div className="container mx-auto  flex flex-col lg:flex-row  items-center p-6 lg:p-16 max-w-full">
             <motion.div
               variants={popInanimate}
               initial="initial"
@@ -104,7 +104,7 @@ const Home = () => {
               <img
                 src={house1}
                 alt="Hero Home"
-                className="rounded-lg w-[500px] max-w-md lg:max-w-lg h-[500px]"
+                className="rounded-lg w-[500px] max-w-md ml-16 lg:max-w-lg h-[500px]"
               />
             </motion.div>
           </div>
